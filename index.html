@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GymFit - Sistema de Membresías y Servicios</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">GYM<span>FIT</span></div>
+            <nav class="nav">
+                <a href="#hero">Inicio</a>
+                <a href="#memberships">Planes</a>
+                <a href="#services">Servicios</a>
+                <a href="#cart" class="cart-link">Carrito <span id="cart-count" class="cart-count">0</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <h1>Entrená mejor, viví mejor</h1>
+                    <p>Alcanzá tus metas con nuestras instalaciones de primer nivel, entrenadores profesionales y servicios exclusivos.</p>
+                    <div class="hero-actions">
+                        <a href="#memberships" class="btn btn-primary">Ver Planes</a>
+                        <a href="#services" class="btn btn-outline">Ver Servicios</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Memberships Section -->
+        <section id="memberships" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Nuestros Planes</h2>
+                    <p>Encontrá la membresía perfecta para tu estilo de vida</p>
+                </div>
+                <div id="plans-grid" class="plans-grid">
+                    <!-- Dinámico -->
+                </div>
+                <div id="membership-management" class="management-card hidden" style="margin-top: 40px;">
+                    <!-- Dinámico -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Catalog of Services Section -->
+        <section id="services" class="section bg-alt">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Servicios Adicionales</h2>
+                    <p>Potenciá tu entrenamiento con nuestros servicios exclusivos</p>
+                </div>
+                <div id="services-grid" class="plans-grid">
+                    <!-- Dinámico -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Shopping Cart Section -->
+        <section id="cart" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2>Tu Carrito</h2>
+                    <p>Revisá los servicios que agregaste antes de finalizar tu compra</p>
+                </div>
+                
+                <div class="cart-container" id="cart-container">
+                    <div id="cart-items" class="cart-items">
+                        <!-- Items del carrito se renderizan aquí -->
+                        <div class="empty-cart-msg">Tu carrito está vacío. Agregá servicios desde el catálogo.</div>
+                    </div>
+                    
+                    <div id="cart-summary" class="cart-summary hidden">
+                        <h3>Resumen de Compra</h3>
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span id="cart-subtotal">$0</span>
+                        </div>
+                        <div class="summary-row total-row">
+                            <span>Total a pagar:</span>
+                            <span id="cart-total">$0</span>
+                        </div>
+                        <button id="btn-checkout" class="btn btn-primary btn-full">Finalizar Compra</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Modal Formulario de Usuario -->
+        <div id="user-info-modal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close-modal" onclick="closeModal()">&times;</span>
+                <h3>Completá tus datos</h3>
+                <p style="color: var(--text-muted); margin-bottom: 20px;">Para confirmar el <strong id="modal-plan-name" class="highlight-text"></strong></p>
+                <form id="user-info-form" class="user-info-form">
+                    <div class="form-group">
+                        <label for="user-name">Nombre completo</label>
+                        <input type="text" id="user-name" required autocomplete="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="user-email">Correo electrónico</label>
+                        <input type="email" id="user-email" required autocomplete="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="user-phone">Teléfono</label>
+                        <input type="tel" id="user-phone" required autocomplete="tel">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-full" style="margin-top: 10px;">Confirmar Membresía</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Notificación Toast -->
+        <div id="toast" class="toast hidden"></div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 GymFit. Proyecto Académico.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
